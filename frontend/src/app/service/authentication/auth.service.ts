@@ -14,37 +14,6 @@ export class AuthService extends BaseService {
         super(h);
     }
 
-    /*
-    login(loginObj: any) {
-
-        let password = Md5.hashStr(loginObj.password);
-        loginObj.password = password;
-
-        const obj = {
-            email: loginObj.email,
-            password: loginObj.password
-        }
-
-        let headers = new HttpHeaders();
-        headers = headers.append('Content-Type', 'application/json');
-        headers = headers.append('bearer', "697-2fe-fc860");
-
-        return this.http.post(`${this.authURL}`, obj, {
-            headers
-        })
-
-            .pipe(
-                map((data: any) => {
-                    let result = data.result[0];
-
-                    localStorage.setItem("token", result.token);
-                    localStorage.setItem("user_id", result.id);
-
-                    return data.result;
-                }),
-            );
-    }*/
-
     login(loginObj: any) {
         let password = Md5.hashStr(loginObj.password);
         loginObj.password = password;
